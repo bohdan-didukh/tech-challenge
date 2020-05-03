@@ -29,16 +29,16 @@ export async function calcTotal(uid: string): Promise<BasketTotal> {
     })
   );
 
-  const total = products.reduce((total, product) => {
+  const total = products.reduce((amount, product) => {
     if (product) {
       const item = items.docs.find(
         (doc) => doc.get("productID") === product.id
       );
       if (item) {
-        return total + product.get("price") * item.get("count");
+        return amount + product.get("price") * item.get("count");
       }
     }
-    return total;
+    return amount;
   }, 0);
 
   return { total };

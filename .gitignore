@@ -2,3 +2,4 @@
 # webstorm ide
 .idea
 node_modules/
+functions/firebase-debug.log
