@@ -8,7 +8,9 @@
   "scripts": {
     "rules:run-emulator": "cd security-rules && yarn start",
     "rules:test": "cd security-rules && yarn test",
-    "rules:deploy": "cd security-rules && yarn deploy"
+    "rules:deploy": "cd security-rules && yarn deploy",
+    "functions:emulator": "cd functions && yarn start",
+    "functions:deploy": "cd functions && yarn deploy"
   },
   "devDependencies": {
     "@firebase/firestore-types": "^1.10.1",
