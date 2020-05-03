@@ -11,3 +11,7 @@ export interface BasketData {
   updated: Timestamp;
   total?: number;
 }
+
+export interface BasketTotal {
+  total: number;
+}

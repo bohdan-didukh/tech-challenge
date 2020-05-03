@@ -394,3 +394,206 @@
 [warn] ⚠  We were unable to load your functions code. (see above)
    - It appears your code is written in Typescript, which must be compiled before emulation.
    - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-05-03T19:48:51.213Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:48:51.631Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:48:52.912Z] DEBUG: Functions runtime initialized.
+[debug] [2020-05-03T19:48:52.913Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-05-03T19:48:52.985Z] DEBUG: firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:231:24)
+    at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:236:34)
+    at Object.<anonymous> (/Users/bdidukh/WebstormProjects/tech-challenge/functions/lib/baskets/getTotal.js:4:38)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-05-03T19:49:11.108Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:49:11.517Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:49:12.787Z] DEBUG: Functions runtime initialized.
+[debug] [2020-05-03T19:49:12.788Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-05-03T19:49:12.860Z] DEBUG: firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:231:24)
+    at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:236:34)
+    at Object.<anonymous> (/Users/bdidukh/WebstormProjects/tech-challenge/functions/lib/baskets/getTotal.js:4:38)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-05-03T19:49:21.929Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:49:23.210Z] DEBUG: Functions runtime initialized.
+[debug] [2020-05-03T19:49:23.210Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-05-03T19:49:23.274Z] DEBUG: firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:231:24)
+    at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:236:34)
+    at Object.<anonymous> (/Users/bdidukh/WebstormProjects/tech-challenge/functions/lib/baskets/getTotal.js:4:38)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-05-03T19:49:44.671Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:49:45.934Z] DEBUG: Functions runtime initialized.
+[debug] [2020-05-03T19:49:45.934Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-05-03T19:49:45.997Z] DEBUG: firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:231:24)
+    at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:236:34)
+    at Object.<anonymous> (/Users/bdidukh/WebstormProjects/tech-challenge/functions/lib/baskets/getTotal.js:4:38)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-05-03T19:50:37.373Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:50:37.778Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:50:39.058Z] DEBUG: Functions runtime initialized.
+[debug] [2020-05-03T19:50:39.059Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-05-03T19:50:39.126Z] DEBUG: firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:231:24)
+    at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:236:34)
+    at Object.<anonymous> (/Users/bdidukh/WebstormProjects/tech-challenge/functions/lib/baskets/getTotal.js:4:38)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-05-03T19:55:17.764Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:55:17.764Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/baskets/getTotal.ts changed, reloading triggers
+[debug] [2020-05-03T19:55:18.278Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:55:19.561Z] DEBUG: Functions runtime initialized.
+[debug] [2020-05-03T19:55:19.561Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-05-03T19:55:19.628Z] DEBUG: firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:231:24)
+    at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:236:34)
+    at Object.<anonymous> (/Users/bdidukh/WebstormProjects/tech-challenge/functions/lib/baskets/getTotal.js:4:38)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-05-03T19:55:52.013Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:55:53.284Z] DEBUG: Functions runtime initialized.
+[debug] [2020-05-03T19:55:53.285Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-05-03T19:55:53.357Z] DEBUG: firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:231:24)
+    at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:236:34)
+    at Object.<anonymous> (/Users/bdidukh/WebstormProjects/tech-challenge/functions/lib/baskets/getTotal.js:4:38)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-05-03T19:56:30.161Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:56:31.485Z] DEBUG: Functions runtime initialized.
+[debug] [2020-05-03T19:56:31.486Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-05-03T19:56:31.556Z] DEBUG: firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:231:24)
+    at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:236:34)
+    at Object.<anonymous> (/Users/bdidukh/WebstormProjects/tech-challenge/functions/lib/baskets/getTotal.js:4:38)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-05-03T19:57:57.722Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/baskets/getTotal.ts changed, reloading triggers
+[debug] [2020-05-03T19:57:58.987Z] DEBUG: Functions runtime initialized.
+[debug] [2020-05-03T19:57:58.988Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-05-03T19:57:59.055Z] DEBUG: firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:231:24)
+    at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:236:34)
+    at Object.<anonymous> (/Users/bdidukh/WebstormProjects/tech-challenge/functions/lib/baskets/getTotal.js:4:38)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-05-03T19:58:27.967Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/baskets/getTotal.ts changed, reloading triggers
+[debug] [2020-05-03T19:58:29.247Z] DEBUG: Functions runtime initialized.
+[debug] [2020-05-03T19:58:29.248Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-05-03T19:58:29.320Z] DEBUG: firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:231:24)
+    at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:236:34)
+    at Object.<anonymous> (/Users/bdidukh/WebstormProjects/tech-challenge/functions/lib/baskets/getTotal.js:4:38)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.
+[debug] [2020-05-03T19:58:32.245Z] DEBUG: File /Users/bdidukh/WebstormProjects/tech-challenge/functions/src/__tests__/baskets/getTotal.test.ts changed, reloading triggers
+[debug] [2020-05-03T19:58:33.502Z] DEBUG: Functions runtime initialized.
+[debug] [2020-05-03T19:58:33.502Z] DEBUG: Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2020-05-03T19:58:33.566Z] DEBUG: firebase-admin has been stubbed.
+[warn] ⚠  TypeError: _onRequestWithOpts is not a function
+    at Object.httpsProvider._onRequestWithOpts (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:231:24)
+    at Object.httpsProvider.onRequest (/usr/local/lib/node_modules/firebase-tools/lib/emulator/functionsEmulatorRuntime.js:236:34)
+    at Object.<anonymous> (/Users/bdidukh/WebstormProjects/tech-challenge/functions/lib/baskets/getTotal.js:4:38)
+    at Module._compile (module.js:653:30)
+    at Object.Module._extensions..js (module.js:664:10)
+    at Module.load (module.js:566:32)
+    at tryModuleLoad (module.js:506:12)
+    at Function.Module._load (module.js:498:3)
+    at Module.require (module.js:597:17)
+    at require (internal/module.js:11:18)
+[warn] ⚠  We were unable to load your functions code. (see above)
+   - It appears your code is written in Typescript, which must be compiled before emulation.
+   - You may be able to run "npm run build" in your functions directory to resolve this.

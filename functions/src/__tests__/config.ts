@@ -12,7 +12,7 @@ export const firebaseConfig = {
 
 export const testFunctions = TestFunctions(
   firebaseConfig,
-  "serviceAccountKey.json"
+  "src/__tests__/serviceAccountKey.json"
 );
 
 test("at least one test", () => {
