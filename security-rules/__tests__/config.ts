@@ -11,19 +11,17 @@ const rules = fs.readFileSync("firestore.rules", "utf8");
  * @return {object} the Firestore.
  */
 // @ts-ignore
-export const authedApp = (auth?: object): firebase.firestore.Firestore =>
-  firebase
-    .initializeTestApp({
-      projectId,
-      auth,
-    })
-    .firestore();
+export const authedApp = (auth?: object) =>
+  firebase.initializeTestApp({
+    projectId,
+    auth,
+  });
 
 /**
  * returns an initialized admin Firebase app.
  */
 export function getAdmin() {
-  return firebase.initializeAdminApp({ projectId }).firestore();
+  return firebase.initializeAdminApp({ projectId });
 }
 
 export const loadRules = () =>
@@ -33,3 +31,8 @@ export const loadRules = () =>
  * Clear the database
  */
 export const clearData = () => firebase.clearFirestoreData({ projectId });
+
+/**
+ * sample user
+ */
+export const USER = { uid: "Bohdan" };

@@ -10,6 +10,8 @@
     "test:rules": "cd ./security-rules && yarn test"
   },
   "devDependencies": {
+    "@firebase/firestore-types": "^1.10.1",
+    "firebase": "^7.14.2",
     "prettier": "^2.0.5"
   }
 }
