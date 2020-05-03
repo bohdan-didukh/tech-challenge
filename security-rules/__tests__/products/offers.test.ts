@@ -26,7 +26,7 @@ export const OFFER: {
 const CollectionProducts: CollectionName = Collections.products;
 const CollectionOffers: CollectionName = Collections.offers;
 
-describe(`test ${CollectionProducts} collection`, function () {
+describe(`test ${CollectionProducts}/${CollectionOffers} collection`, function () {
   beforeAll(async function () {
     await loadRules();
   });

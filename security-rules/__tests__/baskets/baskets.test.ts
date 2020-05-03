@@ -5,9 +5,8 @@ import {
   firestore,
 } from "@firebase/testing";
 import { Timestamp } from "@firebase/firestore-types";
-import { BasketData, CollectionName, Collections } from "../../types";
-import { authedApp, clearData, loadRules, USER } from "./config";
-import { PRODUCT } from "./products/products.test";
+import { BasketData, CollectionName, Collections } from "../../../types";
+import { authedApp, clearData, loadRules, USER } from "../config";
 
 export const BASKET: {
   id?: string;
@@ -15,7 +14,6 @@ export const BASKET: {
 } = {
   data: {
     updated: firestore.FieldValue.serverTimestamp() as Timestamp,
-    products: [PRODUCT.id],
   },
 };
 

@@ -15,11 +15,25 @@ service cloud.firestore {
 
     match /baskets/{userID}{
       allow get, write: if request.auth.uid == userID && isValidTimestamp(request.resource.data.updated);
+
+      match /products/{productID}{
+        allow read, write: if request.auth.uid == userID 
+        && request.resource.data.productID == productID
+        && isValidBasketItem(request.resource.data);
+      }
     }
 
     // helper functions
     function isValidTimestamp(timestampValue){
       return request.time == timestampValue;
+    }
+
+    function isValidBasketItem(data){
+      return isValidTimestamp(data.timestamp) && isProductExists(data.productID) && data.count > 0;
+    }
+
+    function isProductExists(productID){
+      return exists(/databases/$(database)/documents/products/$(productID));
     }
   }
 }

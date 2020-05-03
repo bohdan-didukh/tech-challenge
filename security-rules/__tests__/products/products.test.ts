@@ -16,6 +16,14 @@ export const PRODUCT: {
 
 const CollectionProducts: CollectionName = Collections.products;
 
+export function createProduct() {
+  const admin = getAdmin();
+  const reference = admin
+    .firestore()
+    .collection(CollectionProducts)
+    .doc(PRODUCT.id);
+  return reference.set(PRODUCT.data);
+}
 describe(`test ${CollectionProducts} collection`, function () {
   beforeAll(async function () {
     await loadRules();
@@ -71,6 +79,10 @@ describe(`test ${CollectionProducts} collection`, function () {
       .collection(CollectionProducts)
       .doc(PRODUCT.id);
     await assertFails(reference.delete());
+  });
+
+  test("createProduct", async function () {
+    await assertSucceeds(createProduct());
   });
 
   afterAll(async function () {
