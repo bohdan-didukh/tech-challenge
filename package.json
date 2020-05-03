@@ -1,0 +1,15 @@
+{
+  "name": "tech-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:bohdan-didukh/tech-challenge.git",
+  "author": "Bohdan Didukh <bohdan.didukh@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "run:emulator-rules": "cd ./security-rules && yarn start",
+    "test:rules": "cd ./security-rules && yarn test"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  }
+}

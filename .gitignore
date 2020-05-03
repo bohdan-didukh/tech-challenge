@@ -1,3 +1,4 @@
 
 # webstorm ide
 .idea
+node_modules/
