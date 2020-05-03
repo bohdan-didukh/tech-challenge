@@ -16,7 +16,7 @@ export const PRODUCT: {
 
 const CollectionProducts: CollectionName = Collections.products;
 
-describe("test products collection", function () {
+describe(`test ${CollectionProducts} collection`, function () {
   beforeAll(async function () {
     await loadRules();
   });
@@ -62,6 +62,15 @@ describe("test products collection", function () {
     const user = authedApp(USER);
     const reference = user.firestore().collection(CollectionProducts);
     await assertSucceeds(reference.get());
+  });
+
+  test("user should not be able to delete a product", async function () {
+    const user = authedApp(USER);
+    const reference = user
+      .firestore()
+      .collection(CollectionProducts)
+      .doc(PRODUCT.id);
+    await assertFails(reference.delete());
   });
 
   afterAll(async function () {

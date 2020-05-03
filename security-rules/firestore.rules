@@ -10,7 +10,12 @@ service cloud.firestore {
     }
 
     match /baskets/{userID}{
-      allow get, write: if request.auth.uid == userID;
+      allow get, write: if request.auth.uid == userID && isValidTimestamp(request.resource.data.updated);
+    }
+
+    // helper functions
+    function isValidTimestamp(timestampValue){
+      return request.time == timestampValue;
     }
   }
 }
