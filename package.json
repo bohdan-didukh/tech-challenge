@@ -6,8 +6,9 @@
   "author": "Bohdan Didukh <bohdan.didukh@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "run:emulator-rules": "cd ./security-rules && yarn start",
-    "test:rules": "cd ./security-rules && yarn test"
+    "rules:run-emulator": "cd security-rules && yarn start",
+    "rules:test": "cd security-rules && yarn test",
+    "rules:deploy": "cd security-rules && yarn deploy"
   },
   "devDependencies": {
     "@firebase/firestore-types": "^1.10.1",

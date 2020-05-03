@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "firebase emulators:start --only firestore",
-    "test": "jest --config ./jest.config.js --runInBand --detectOpenHandles"
+    "test": "jest --config ./jest.config.js --runInBand --detectOpenHandles",
+    "deploy": "firebase deploy --only firestore:rules"
   },
   "husky": {
     "hooks": {
