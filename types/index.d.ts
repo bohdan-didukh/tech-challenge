@@ -1,3 +1,3 @@
 export * from "./collections";
-export * from "./products.d";
+export * from "./products";
 export * from "./baskets";

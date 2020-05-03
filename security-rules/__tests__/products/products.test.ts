@@ -1,6 +1,6 @@
 import { apps, assertFails, assertSucceeds } from "@firebase/testing";
-import { authedApp, clearData, getAdmin, loadRules, USER } from "./config";
-import { CollectionName, Collections, ProductData } from "../../types";
+import { authedApp, clearData, getAdmin, loadRules, USER } from "../config";
+import { CollectionName, Collections, ProductData } from "../../../types";
 
 export const PRODUCT: {
   id: string;

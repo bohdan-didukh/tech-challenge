@@ -7,7 +7,7 @@ import {
 import { Timestamp } from "@firebase/firestore-types";
 import { BasketData, CollectionName, Collections } from "../../types";
 import { authedApp, clearData, loadRules, USER } from "./config";
-import { PRODUCT } from "./products.test";
+import { PRODUCT } from "./products/products.test";
 
 export const BASKET: {
   id?: string;
