@@ -2,4 +2,26 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  transition: transform var(--speed);
+  padding-top: 130px;
+}
+
+.products:not(.hidden) {
+  transition-delay: calc(var(--speed) / 2);
+}
+
+@media all and (max-width: 1500px) {
+  .products {
+    padding-top: 90px;
+  }
+
+  .products.hidden {
+    transform: translateX(-300px);
+  }
+}
+
+@media all and (max-width: 850px) {
+  .products {
+    margin: 0 auto;
+  }
 }

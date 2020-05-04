@@ -23,7 +23,7 @@ export const BasketProducts: React.FC = () => {
   const hidden = !match;
 
   return (
-    <div className={styles.products}>
+    <div className={`${styles.products} ${hidden ? styles.hidden : ""}`}>
       {basketProducts?.docs.map((doc, index) => (
         <BasketItem
           basketProduct={doc}

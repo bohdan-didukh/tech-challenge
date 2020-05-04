@@ -4,7 +4,7 @@
   align-items: center;
   height: 40px;
   padding: 0 20px 20px;
-  transition: transform calc(var(--speed) * 1.5);
+  transition: transform var(--speed);
   transform: translateX(100%);
 }
 
@@ -45,4 +45,12 @@
 
 .visible {
   transform: translateX(0);
+}
+
+@media all and (max-width: 850px) {
+  .item {
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 10px 0;
+  }
 }

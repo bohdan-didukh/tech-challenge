@@ -3,4 +3,21 @@
   top: 130px;
   overflow: hidden;
   right: 0;
+
+  &.hidden {
+    z-index: -1;
+  }
+}
+
+@media all and (max-width: 850px) {
+  .products {
+    min-width: 350px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .products {
+    width: 100%;
+    top: 90px;
+  }
 }

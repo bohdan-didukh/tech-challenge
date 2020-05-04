@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { fetchSingleProduct } from "../../../actions/fetchSingleProduct";
 import { Times } from "../../../icons/Times";
 import { removeProductFromBasket } from "../../../actions/removeProductFromBasket";
+import { toDollars } from "../../../helpers";
 
 export interface IBasketItem {
   basketProduct: DocumentSnapshot<BasketProduct>;
@@ -30,7 +31,7 @@ export const BasketItem: React.FC<IBasketItem> = ({
         setProduct(snap as DocumentSnapshot<ProductData>)
       );
     }
-  }, []);
+  }, [basketProduct.exists, basketProduct.id]);
 
   if (!basketProduct.exists || !product?.exists) return null;
 
@@ -49,7 +50,7 @@ export const BasketItem: React.FC<IBasketItem> = ({
       <img src={image} alt={name} className={styles.image} />
       <span className={styles.name}>{name}</span>
       <span className={styles.count}>{count}</span>
-      <strong className={styles.price}>${count * price}</strong>
+      <strong className={styles.price}>${toDollars(count * price)}</strong>
       <button onClick={handleRemove}>
         <Times className={styles.remove} />
       </button>

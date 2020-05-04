@@ -18,18 +18,18 @@ export const Basket: React.FC = () => {
     null
   );
 
-  const total = basket?.get("total") | 0;
-  const hidden = useMemo(() => total === 0, [total]);
-
   useEffect(() => {
     onBasketSnapshot(setBasket);
   }, []);
+
+  const total = basket?.get("total") | 0;
+  const hidden = useMemo(() => total === 0, [total]);
 
   useEffect(() => {
     if (hidden && match) {
       history.replace(ROUTER.home);
     }
-  }, [hidden]);
+  }, [hidden, history, match]);
 
   return (
     <Link

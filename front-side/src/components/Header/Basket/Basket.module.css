@@ -20,7 +20,27 @@
 }
 
 .value {
-  font-size: 1.4em;
+  font-size: 1.7em;
   padding-left: 1em;
-  font-weight: bold;
+}
+
+@media all and (max-width: 800px) {
+  .basket {
+    padding-right: 5%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .basket {
+    top: calc(50% - 16px);
+  }
+  .value {
+    padding-left: 0.4em;
+    font-size: 1.4em;
+  }
+
+  .icon {
+    height: 32px;
+    width: 32px;
+  }
 }

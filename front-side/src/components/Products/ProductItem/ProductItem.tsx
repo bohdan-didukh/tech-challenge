@@ -24,7 +24,7 @@ export const ProductItem: React.FC<IProductItem> = ({ product }) => {
   return (
     <button className={styles.product} onClick={handleClick}>
       <img src={image} alt={name} className={styles.image} />
-      <h3>{name}</h3>
+      <h3 className={styles.name}>{name}</h3>
       <h4 className={styles.add}>
         <span className={styles.type}>per {type}</span>
         <strong className={styles.price}>${toDollars(price)}</strong>
