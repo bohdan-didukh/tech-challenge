@@ -1,3 +1,9 @@
+.header {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
 .title {
   text-align: center;
 }
@@ -33,6 +39,8 @@
   transition: transform var(--speed);
 }
 
+.link:active::after,
+.link:focus::after,
 .link:hover::after {
   transform: none;
 }

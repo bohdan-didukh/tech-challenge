@@ -11,9 +11,15 @@ import { removeProductFromBasket } from "../../../actions/removeProductFromBaske
 
 export interface IBasketItem {
   basketProduct: DocumentSnapshot<BasketProduct>;
+  hidden: boolean;
+  index: number;
 }
 
-export const BasketItem: React.FC<IBasketItem> = ({ basketProduct }) => {
+export const BasketItem: React.FC<IBasketItem> = ({
+  basketProduct,
+  hidden,
+  index,
+}) => {
   const [product, setProduct] = useState<DocumentSnapshot<ProductData> | null>(
     null
   );
@@ -31,10 +37,15 @@ export const BasketItem: React.FC<IBasketItem> = ({ basketProduct }) => {
   const { image, name, price } = product.data() as ProductData;
 
   const count = basketProduct.get("count");
-  const handleRemove = () => removeProductFromBasket(product, count);
+  const handleRemove = () => {
+    return removeProductFromBasket(product, count);
+  };
 
   return (
-    <div className={styles.item}>
+    <div
+      className={`${styles.item} ${hidden ? "" : styles.visible}`}
+      style={{ transitionDelay: `${index * 0.05}s` }}
+    >
       <img src={image} alt={name} className={styles.image} />
       <span className={styles.name}>{name}</span>
       <span className={styles.count}>{count}</span>

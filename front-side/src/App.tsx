@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { initializeApp, auth, User } from "firebase";
 import "firebase/auth";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import { Header } from "./components/Header";
 
@@ -27,17 +28,17 @@ export const App: React.FC = () => {
     auth().onAuthStateChanged(setUser);
   }, []);
   return (
-    <div>
+    <Router>
       <main>
         <Header />
 
         {user && (
           <>
-            <BasketProducts />
             <Products />
+            <BasketProducts />
           </>
         )}
       </main>
-    </div>
+    </Router>
   );
 };
