@@ -1,9 +1,13 @@
-import { DocumentReference, Timestamp } from "@firebase/firestore-types";
+import {
+  DocumentReference,
+  FieldValue,
+  Timestamp,
+} from "@firebase/firestore-types";
 
 export interface BasketProduct {
-  timestamp: Timestamp;
+  timestamp: Timestamp | FieldValue;
   productID: string;
-  count: number;
+  count: number | FieldValue;
   offer?: DocumentReference;
 }
 
