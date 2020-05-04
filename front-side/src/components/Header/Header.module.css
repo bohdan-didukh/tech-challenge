@@ -12,3 +12,27 @@
   display: inline-block;
   padding: 0 15px;
 }
+
+.link {
+  outline: none;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.link::after {
+  content: " ";
+  position: absolute;
+  background: var(--color-base);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translateX(-100%);
+  transition: transform var(--speed);
+}
+
+.link:hover::after {
+  transform: none;
+}

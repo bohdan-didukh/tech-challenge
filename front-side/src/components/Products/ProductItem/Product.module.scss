@@ -10,13 +10,13 @@ $move: 25px;
   width: var(--product-size);
   height: var(--product-size);
   object-fit: contain;
-  transition: transform var(--speed);
+  transition: all var(--speed);
 }
 
 .add {
   position: relative;
   overflow: hidden;
-  padding: 8px;
+  padding: 10px 8px;
   display: inline-block;
   vertical-align: middle;
   margin: 0;
@@ -71,15 +71,13 @@ $move: 25px;
   }
 }
 
+.product:active,
+.product:focus,
 .product:hover {
   & .image {
     transform: scale(1.15);
   }
   & .add::after {
     transform: translate(0, calc(100% - 2px));
-  }
-
-  & .add:hover::after {
-    //transform: translate(0, 0);
   }
 }

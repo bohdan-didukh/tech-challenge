@@ -32,6 +32,10 @@ button {
   outline: none;
 }
 
+button:active {
+  color: var(--color-base);
+}
+
 a {
   color: var(--color-base);
   text-decoration: none;
