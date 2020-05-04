@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { DocumentSnapshot } from "@firebase/firestore-types";
 import { ProductItem } from "./ProductItem";
 
-import "./Products.css";
+import styles from "./Products.module.css";
 import { fetchProducts } from "../../actions/fetchProducts";
 
 export const Products: React.FC = () => {
@@ -13,7 +13,7 @@ export const Products: React.FC = () => {
   }, []);
 
   return (
-    <div className="products">
+    <div className={styles.products}>
       {products.map((product) => (
         <ProductItem product={product} key={product.id} />
       ))}

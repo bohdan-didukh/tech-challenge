@@ -1,0 +1,42 @@
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+  padding: 0 20px 20px;
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.name {
+  width: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.count {
+  width: 20px;
+  text-align: right;
+}
+
+.price {
+  width: 28px;
+  text-align: right;
+}
+
+.name,
+.count,
+.price {
+  margin-right: 25px;
+}
+
+.remove {
+  width: 24px;
+  height: 24px;
+}

@@ -4,7 +4,7 @@ import { DocumentSnapshot } from "@firebase/firestore-types";
 import styles from "./Product.module.scss";
 import { ProductData } from "../../../../../types/products";
 import { CartAdd } from "../../../icons";
-import { addProductToBucket } from "../../../actions/addProductToBucket";
+import { addProductToBasket } from "../../../actions/addProductToBasket";
 import { toDollars } from "../../../helpers";
 
 export interface IProductItem {
@@ -14,7 +14,7 @@ export const ProductItem: React.FC<IProductItem> = ({ product }) => {
   const { image, name, type, price } = product.data() as ProductData;
 
   const handleClick = () =>
-    addProductToBucket(product as DocumentSnapshot<ProductData>);
+    addProductToBasket(product as DocumentSnapshot<ProductData>);
 
   return (
     <button className={styles.product} onClick={handleClick}>

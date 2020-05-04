@@ -7,7 +7,7 @@ import { updateBasket } from "./updateBasket";
 const BasketCollection: CollectionName = "baskets";
 const ProductsCollection: CollectionName = "products";
 
-export const addProductToBucket = (product: DocumentSnapshot<ProductData>) => {
+export const addProductToBasket = (product: DocumentSnapshot<ProductData>) => {
   const user = auth().currentUser;
 
   if (!user) {

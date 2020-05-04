@@ -19,9 +19,10 @@ service cloud.firestore {
 
       match /products/{productID}{
         allow read: if request.auth.uid == userID;
-        allow write: if request.auth.uid == userID 
+        allow create, update: if request.auth.uid == userID 
         && request.resource.data.productID == productID
         && isValidBasketItem(request.resource.data);
+        allow delete: if request.auth.uid == userID;
       }
     }
 

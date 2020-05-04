@@ -8,6 +8,7 @@ import "./App.css";
 
 import { FIREBASE_CONFIG } from "./constants";
 import { Products } from "./components/Products";
+import { BasketProducts } from "./components/BasketProducts";
 
 // Initialize Firebase
 initializeApp(FIREBASE_CONFIG);
@@ -32,6 +33,7 @@ export const App: React.FC = () => {
 
         {user && (
           <>
+            <BasketProducts />
             <Products />
           </>
         )}
