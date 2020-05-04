@@ -3,19 +3,12 @@
   --product-size: 100px;
   --color-base: #000;
   --speed: 0.25s;
-  --speed-half: calc(var(--speed) / 2);
 }
 
 html,
 body {
   font-family: var(--font);
   outline-color: var(--color-base);
-}
-
-main {
-  width: 1200px;
-  max-width: 90%;
-  margin: 0 auto;
 }
 
 h2,

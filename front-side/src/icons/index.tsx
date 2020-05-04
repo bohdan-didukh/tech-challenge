@@ -1,3 +1,4 @@
+export * from "./BasketIcon";
 export * from "./CartAdd";
 export * from "./GitHub";
 

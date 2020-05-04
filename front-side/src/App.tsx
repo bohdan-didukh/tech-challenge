@@ -9,12 +9,12 @@ import "./App.css";
 import { FIREBASE_CONFIG } from "./constants";
 import { Products } from "./components/Products";
 
+// Initialize Firebase
+initializeApp(FIREBASE_CONFIG);
+
 export const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
-    // Initialize Firebase
-    initializeApp(FIREBASE_CONFIG);
-
     // sign in anonymously
     auth()
       .signInAnonymously()

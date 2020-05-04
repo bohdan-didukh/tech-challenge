@@ -1,0 +1,25 @@
+.basket {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  right: 0;
+  padding-right: 40px;
+  transition: transform var(--speed);
+  transform-origin: center center;
+}
+
+.hidden {
+  transform: translateX(100%);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.value {
+  font-size: 1.4em;
+  padding-left: 1em;
+  font-weight: bold;
+}
