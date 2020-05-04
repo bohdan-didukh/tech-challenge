@@ -31,3 +31,9 @@ button {
   cursor: pointer;
   outline: none;
 }
+
+a {
+  color: var(--color-base);
+  text-decoration: none;
+  font-family: var(--font);
+}
