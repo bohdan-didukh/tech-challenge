@@ -12,8 +12,8 @@ export interface BasketProduct {
 }
 
 export interface BasketData {
-  updated: Timestamp;
-  total?: number;
+  updated: Timestamp | FieldValue;
+  total?: number | FieldValue;
 }
 
 export interface BasketTotal {

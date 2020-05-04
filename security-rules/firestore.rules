@@ -14,7 +14,8 @@ service cloud.firestore {
     }
 
     match /baskets/{userID}{
-      allow get, write: if request.auth.uid == userID && isValidTimestamp(request.resource.data.updated);
+      allow get: if request.auth.uid == userID;
+      allow write: if request.auth.uid == userID && isValidTimestamp(request.resource.data.updated);
 
       match /products/{productID}{
         allow read: if request.auth.uid == userID;

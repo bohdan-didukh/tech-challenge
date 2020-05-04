@@ -4,26 +4,26 @@ import { DocumentSnapshot } from "@firebase/firestore-types";
 import styles from "./Basket.module.css";
 
 import { BasketIcon } from "../../../icons";
-import { onBasketProductsSnapshot } from "../../../actions/onBasketProductsSnapshot";
+import { BasketData } from "../../../../../types";
+import { onBasketSnapshot } from "../../../actions/onBasketSnapshot";
+import { toDollars } from "../../../helpers";
 
 export const Basket: React.FC = () => {
-  const [basketProducts, setBasketProducts] = useState<DocumentSnapshot[]>([]);
-
-  const totalProducts = useMemo<number>(
-    () => basketProducts.reduce((count, doc) => count + doc.get("count"), 0),
-    [basketProducts]
+  const [basket, setBasket] = useState<DocumentSnapshot<BasketData> | null>(
+    null
   );
 
-  const hidden = useMemo(() => totalProducts === 0, [totalProducts]);
+  const total = basket?.get("total") | 0;
+  const hidden = useMemo(() => total === 0, [total]);
 
   useEffect(() => {
-    onBasketProductsSnapshot((snapshot) => setBasketProducts(snapshot.docs));
+    onBasketSnapshot(setBasket);
   }, []);
 
   return (
     <div className={`${styles.basket} ${hidden ? styles.hidden : ""}`}>
       <BasketIcon className={styles.icon} />
-      <div className={styles.value}>{totalProducts}</div>
+      <div className={styles.value}>${toDollars(total)}</div>
     </div>
   );
 };
