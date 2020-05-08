@@ -19,7 +19,7 @@ export const Offer: React.FC<OfferProps> = ({ offer, className = "" }) => {
    * we need it for show-in animation
    */
   useEffect(() => {
-    setTimeout(() => setHidden(""), 10);
+    setTimeout(() => setHidden(""), 100);
   }, []);
 
   const { type, value, products } = offer.data() as OfferData;
@@ -39,7 +39,7 @@ export const Offer: React.FC<OfferProps> = ({ offer, className = "" }) => {
                   </>
                 )}
                 <span className={styles.operation}>
-                  {index === list.length - 1 ? "=" : "+"}{" "}
+                  {index === list.length - 1 ? "=" : "+"}
                 </span>
               </span>
             )

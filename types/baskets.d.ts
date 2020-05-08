@@ -1,14 +1,11 @@
-import {
-  DocumentReference,
-  FieldValue,
-  Timestamp,
-} from "@firebase/firestore-types";
+import { FieldValue, Timestamp } from "@firebase/firestore-types";
 
 export interface BasketProduct {
   timestamp: Timestamp | FieldValue;
   productID: string;
   count: number | FieldValue;
-  offer?: DocumentReference;
+  offer?: string; // offerID value
+  applied?: boolean;
 }
 
 export interface BasketData {

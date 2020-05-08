@@ -18,11 +18,13 @@ export const ProductItem: React.FC<IProductItem> = ({ product }) => {
   const [hidden, setHidden] = useState(styles.hidden);
   const history = useHistory();
   const { image, name, type, price } = product.data() as ProductData;
-  const [offer, setOffer] = useState<DocumentSnapshot<OfferData> | null>(null);
+  const [offer, setOffer] = useState<DocumentSnapshot<OfferData> | undefined>(
+    undefined
+  );
 
   const handleClick = () => {
     history.replace(ROUTER.home);
-    return addProductToBasket(product as DocumentSnapshot<ProductData>);
+    return addProductToBasket(product as DocumentSnapshot<ProductData>, offer);
   };
 
   useEffect(() => {
