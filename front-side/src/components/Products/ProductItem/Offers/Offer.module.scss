@@ -1,0 +1,14 @@
+.offer {
+  transition: all var(--speed);
+
+  &.hidden {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+
+.value {
+  color: var(--color-red);
+  font-weight: bold;
+  transition: all var(--speed);
+}

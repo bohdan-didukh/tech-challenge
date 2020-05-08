@@ -1,7 +1,11 @@
 :root {
   --font: "Jost", sans-serif;
   --product-size: 100px;
-  --color-base: #000;
+
+  /* using the same colors anywhere in the app */
+  /* storing them here to make it easy to change */
+  --color-base: #1c272d;
+  --color-red: #c63228;
   --speed: 0.25s;
 }
 
