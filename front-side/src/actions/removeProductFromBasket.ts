@@ -1,6 +1,8 @@
 import { DocumentReference, DocumentSnapshot } from "@firebase/firestore-types";
 import { BasketProduct, CollectionName, ProductData } from "../../../types";
-import { auth, firestore } from "firebase";
+import * as firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
 import { updateBasket } from "./updateBasket";
 
 const BasketCollection: CollectionName = "baskets";
@@ -10,19 +12,20 @@ export const removeProductFromBasket = (
   product: DocumentSnapshot<ProductData>,
   count: number
 ) => {
-  const user = auth().currentUser;
+  const user = firebase.auth().currentUser;
 
   if (!user) {
     throw new Error("user is undefined");
   }
 
-  const reference = firestore()
+  const reference = firebase
+    .firestore()
     .collection(BasketCollection)
     .doc(user.uid)
     .collection(ProductsCollection)
     .doc(product.id) as DocumentReference<BasketProduct>;
 
-  const batch = firestore().batch();
+  const batch = firebase.firestore().batch();
   batch.delete(reference);
   updateBasket(-product.get("price") * count, batch);
   return batch.commit();

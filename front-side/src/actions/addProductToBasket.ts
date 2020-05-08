@@ -1,31 +1,34 @@
 import { DocumentReference, DocumentSnapshot } from "@firebase/firestore-types";
+import * as firebase from "firebase/app";
+import "firebase/firestore";
+
 import { ProductData } from "../../../types/products";
 import { BasketProduct, CollectionName } from "../../../types";
-import { auth, firestore } from "firebase";
 import { updateBasket } from "./updateBasket";
 
 const BasketCollection: CollectionName = "baskets";
 const ProductsCollection: CollectionName = "products";
 
 export const addProductToBasket = (product: DocumentSnapshot<ProductData>) => {
-  const user = auth().currentUser;
+  const user = firebase.auth().currentUser;
 
   if (!user) {
     throw new Error("user is undefined");
   }
 
   const data: BasketProduct = {
-    timestamp: firestore.FieldValue.serverTimestamp(),
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     productID: product.id,
-    count: firestore.FieldValue.increment(1),
+    count: firebase.firestore.FieldValue.increment(1),
   };
-  const reference = firestore()
+  const reference = firebase
+    .firestore()
     .collection(BasketCollection)
     .doc(user.uid)
     .collection(ProductsCollection)
     .doc(product.id) as DocumentReference<BasketProduct>;
 
-  const batch = firestore().batch();
+  const batch = firebase.firestore().batch();
   batch.set<BasketProduct>(reference, data, { merge: true });
   updateBasket(product.get("price"), batch);
 

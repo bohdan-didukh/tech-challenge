@@ -1,0 +1,37 @@
+[debug] [2020-05-05T18:22:09.033Z] ----------------------------------------------------------------------
+[debug] [2020-05-05T18:22:09.035Z] Command:       /Users/bdidukh/.nvm/versions/node/v12.14.0/bin/node /Users/bdidukh/.nvm/versions/node/v12.14.0/bin/firebase deploy --only hosting
+[debug] [2020-05-05T18:22:09.035Z] CLI Version:   8.2.0
+[debug] [2020-05-05T18:22:09.035Z] Platform:      darwin
+[debug] [2020-05-05T18:22:09.035Z] Node Version:  v12.14.0
+[debug] [2020-05-05T18:22:09.036Z] Time:          Tue May 05 2020 21:22:09 GMT+0300 (Eastern European Summer Time)
+[debug] [2020-05-05T18:22:09.036Z] ----------------------------------------------------------------------
+[debug] [2020-05-05T18:22:09.036Z] 
+[debug] [2020-05-05T18:22:09.047Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-05T18:22:09.048Z] > authorizing via signed-in user
+[debug] [2020-05-05T18:22:09.048Z] [iam] checking project basket-challenge for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-05-05T18:22:09.051Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-05-05T18:22:09.051Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-05-05T18:22:09.233Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 05 May 2020 18:22:09 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-05T18:22:09.257Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/basket-challenge:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-05-05T18:22:10.304Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 05 May 2020 18:22:10 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=820","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-05T18:22:10.305Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/basket-challenge  
+ 
+[debug] [2020-05-05T18:22:10.641Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 05 May 2020 18:22:10 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'basket-challenge'...
+[info] 
+[info] i  deploying hosting
+[debug] [2020-05-05T18:22:13.471Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/basket-challenge/versions  
+ {"config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-05-05T18:22:14.958Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 05 May 2020 18:22:14 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[basket-challenge]: beginning deploy...
+[info] i  hosting[basket-challenge]: found 18 files in build
+[debug] [2020-05-05T18:22:15.041Z] [hosting] hash cache [YnVpbGQ] stored for 18 files
+[debug] [2020-05-05T18:22:15.041Z] [hosting][hash queue][FINAL] {"max":64,"min":2,"avg":9.277777777777779,"active":0,"complete":18,"success":18,"errored":0,"retried":0,"total":18,"elapsed":70}
+[debug] [2020-05-05T18:22:15.041Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/basket-challenge/versions/cad91d710e9032ba:populateFiles  
+ <request body omitted>
+[debug] [2020-05-05T18:22:16.155Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 05 May 2020 18:22:16 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-05T18:22:16.157Z] [hosting][populate queue][FINAL] {"max":1116,"min":1116,"avg":1116,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1117}
+[debug] [2020-05-05T18:22:16.157Z] [hosting] uploads queued: 2

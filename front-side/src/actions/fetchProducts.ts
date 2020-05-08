@@ -1,6 +1,7 @@
-import { firestore } from "firebase";
+import * as firebase from "firebase/app";
+import "firebase/firestore";
 import { CollectionName } from "../../../types";
 
 const ProductsCollection: CollectionName = "products";
 export const fetchProducts = () =>
-  firestore().collection(ProductsCollection).get();
+  firebase.firestore().collection(ProductsCollection).get();

@@ -1,4 +1,6 @@
-import { auth } from "firebase";
+import * as firebase from "firebase/app";
+import "firebase/auth";
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -8,7 +10,7 @@ import styles from "./Header.module.css";
 import { ROUTER } from "../../constants/routes";
 
 export const Header: React.FC = () => {
-  const user = auth().currentUser;
+  const user = firebase.auth().currentUser;
   return (
     <header className={styles.header}>
       {user && <Basket />}
