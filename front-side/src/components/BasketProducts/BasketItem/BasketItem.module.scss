@@ -30,6 +30,10 @@
 .price {
   width: 28px;
   text-align: right;
+
+  &.discount {
+    color: var(--color-red);
+  }
 }
 
 .name,

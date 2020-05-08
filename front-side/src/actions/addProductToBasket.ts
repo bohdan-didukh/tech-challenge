@@ -4,6 +4,7 @@ import "firebase/firestore";
 
 import { OfferData, ProductData } from "../../../types/products";
 import { BasketProduct, CollectionName } from "../../../types";
+import { updateBasket } from "./updateBasket";
 
 const BasketCollection: CollectionName = "baskets";
 const ProductsCollection: CollectionName = "products";
@@ -16,6 +17,15 @@ export const addProductToBasket = (
 
   if (!user) {
     throw new Error("user is undefined");
+  }
+
+  let price = product.get("price");
+
+  if (offer && offer.exists) {
+    const { type, value } = offer.data() as OfferData;
+    if (type === "discount") {
+      price = Math.round(product.get("price") * (1 - value));
+    }
   }
 
   const data: BasketProduct = {
@@ -35,5 +45,9 @@ export const addProductToBasket = (
     .collection(ProductsCollection)
     .doc(product.id) as DocumentReference<BasketProduct>;
 
-  return reference.set(data, { merge: true });
+  const batch = firebase.firestore().batch();
+  batch.set<BasketProduct>(reference, data, { merge: true });
+  updateBasket(price, batch);
+
+  return batch.commit();
 };

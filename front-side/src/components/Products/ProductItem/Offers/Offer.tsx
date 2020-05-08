@@ -30,7 +30,7 @@ export const Offer: React.FC<OfferProps> = ({ offer, className = "" }) => {
         <>
           {Object.entries(products).map(
             ([productID, { image, count }], index, list) => (
-              <span className={styles.product}>
+              <span className={styles.product} key={productID}>
                 <img src={image} alt={productID} className={styles.image} />
                 {count > 1 && (
                   <>
