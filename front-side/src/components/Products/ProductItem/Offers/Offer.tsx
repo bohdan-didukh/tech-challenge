@@ -3,13 +3,14 @@ import { DocumentSnapshot } from "@firebase/firestore-types";
 import { OfferData, OfferType } from "../../../../../../types/products";
 
 import styles from "./Offer.module.scss";
+import { Times } from "../../../../icons/Times";
 
 export interface OfferProps {
   offer: DocumentSnapshot<OfferData>;
   className?: string;
 }
 
-const DiscountType: OfferType = "discount";
+const GroupType: OfferType = "group";
 export const Offer: React.FC<OfferProps> = ({ offer, className = "" }) => {
   const [hidden, setHidden] = useState(styles.hidden);
 
@@ -18,13 +19,34 @@ export const Offer: React.FC<OfferProps> = ({ offer, className = "" }) => {
    * we need it for show-in animation
    */
   useEffect(() => {
-    setTimeout(() => setHidden(""), 0);
+    setTimeout(() => setHidden(""), 10);
   }, []);
+
+  const { type, value, products } = offer.data() as OfferData;
+
   return (
     <div className={`${styles.offer} ${className} ${hidden}`}>
-      {offer.get("type") === DiscountType && (
-        <div className={styles.value}>- {offer.get("value") * 100}%</div>
+      {type === GroupType && products && (
+        <>
+          {Object.entries(products).map(
+            ([productID, { image, count }], index, list) => (
+              <span className={styles.product}>
+                <img src={image} alt={productID} className={styles.image} />
+                {count > 1 && (
+                  <>
+                    <Times className={styles.times} />
+                    <span className={styles.operation}>2</span>
+                  </>
+                )}
+                <span className={styles.operation}>
+                  {index === list.length - 1 ? "=" : "+"}{" "}
+                </span>
+              </span>
+            )
+          )}
+        </>
       )}
+      <div className={styles.value}>- {value * 100}%</div>
     </div>
   );
 };

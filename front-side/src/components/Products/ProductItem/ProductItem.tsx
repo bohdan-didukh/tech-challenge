@@ -15,6 +15,7 @@ export interface IProductItem {
   product: DocumentSnapshot;
 }
 export const ProductItem: React.FC<IProductItem> = ({ product }) => {
+  const [hidden, setHidden] = useState(styles.hidden);
   const history = useHistory();
   const { image, name, type, price } = product.data() as ProductData;
   const [offer, setOffer] = useState<DocumentSnapshot<OfferData> | null>(null);
@@ -32,8 +33,15 @@ export const ProductItem: React.FC<IProductItem> = ({ product }) => {
     });
   }, [product.id]);
 
+  /**
+   * animate product on did mount
+   */
+  useEffect(() => {
+    setTimeout(() => setHidden(""), 10);
+  }, []);
+
   return (
-    <button className={styles.product} onClick={handleClick}>
+    <button className={`${styles.product} ${hidden}`} onClick={handleClick}>
       {offer && <Offer offer={offer} className={styles.offer} />}
       <img src={image} alt={name} className={styles.image} loading="lazy" />
       <h3 className={styles.name}>{name}</h3>

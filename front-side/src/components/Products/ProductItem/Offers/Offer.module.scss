@@ -1,14 +1,40 @@
 .offer {
   transition: all var(--speed);
+  transform-origin: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   &.hidden {
     opacity: 0;
-    transform: scale(0.4);
+    transform: translateX(10px);
   }
 }
 
 .value {
   color: var(--color-red);
   font-weight: bold;
-  transition: all var(--speed);
+}
+
+.product {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.times {
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+}
+.operation {
+  margin-right: 10px;
+  font-weight: bold;
 }

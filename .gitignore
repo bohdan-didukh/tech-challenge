@@ -3,3 +3,4 @@
 .idea
 node_modules/
 functions/firebase-debug.log
+hosting*
