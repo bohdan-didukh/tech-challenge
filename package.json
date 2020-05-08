@@ -9,9 +9,6 @@
     "rules:run-emulator": "cd security-rules && yarn start",
     "rules:test": "cd security-rules && yarn test",
     "rules:deploy": "cd security-rules && yarn deploy",
-    "functions:emulator": "cd functions && yarn start",
-    "functions:deploy": "cd functions && yarn deploy",
-    "functions:test": "cd functions && yarn test",
     "front-side:run": "cd front-side && yarn start",
     "front-side:deploy": "firebase deploy --only hosting"
   },
