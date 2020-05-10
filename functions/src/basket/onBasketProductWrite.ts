@@ -1,10 +1,19 @@
+import * as admin from "firebase-admin";
 import * as functions from "firebase-functions";
-import { BasketData, Collections } from "../../../types";
+
+import { Collections } from "../../../types";
+import { calcTotal } from "./calcTotal";
+import { updateBasket } from "./updateBasket";
 
 export const onBasketProductWrite = functions.firestore
-  .document(`${Collections.baskets}/userID/${Collections.products}/productID`)
-  .onWrite(({ before, after }, context) => {
-    const data = (before.data() as BasketData) || undefined;
-    console.log("data is:", data);
-    return true;
+  .document(`${Collections.baskets}/uid/${Collections.products}/productID`)
+  .onWrite(async ({ after }, context) => {
+    const { uid } = context.params;
+    return (
+      uid &&
+      updateBasket(uid, {
+        ...(await calcTotal(uid)),
+        updated: admin.firestore.FieldValue.serverTimestamp(),
+      })
+    );
   });

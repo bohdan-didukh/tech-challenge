@@ -19,7 +19,6 @@ export const BASKET_PRODUCT: {
     productID: PRODUCT.id,
     count: 1,
     price: PRODUCT.data.price,
-    discount: 1, // 1 means no discount price * discount === price
   },
 };
 
@@ -54,13 +53,16 @@ describe(`test ${CollectionBaskets}/{userID}/${CollectionProducts} collection`, 
 
   test("user should be able to create a basket product with a valid data and offer", async function () {
     await assertSucceeds(
-      reference.set({ ...BASKET_PRODUCT.data, offerID: OFFER.id })
+      reference.set({
+        ...BASKET_PRODUCT.data,
+        offerID: OFFER.id,
+      })
     );
   });
 
   test("user should not be able to create/update a basket product with invalid price value", async function () {
     await assertFails(
-      reference.set({ ...BASKET_PRODUCT.data, price: PRODUCT.data.price * 2 })
+      reference.set({ ...BASKET_PRODUCT.data, price: PRODUCT.data.price * 0.1 })
     );
   });
 
@@ -97,14 +99,6 @@ describe(`test ${CollectionBaskets}/{userID}/${CollectionProducts} collection`, 
     await assertFails(
       reference.set({ ...BASKET_PRODUCT.data, offerID: "invalid-offer-id" })
     );
-  });
-
-  /**
-   * discount value will be updated with cloud functions, so we just need to check that user is able to set 1
-   */
-  test("it should fail when the discount value is invalid", async function () {
-    await assertFails(reference.set({ ...BASKET_PRODUCT.data, discount: 2 }));
-    await assertFails(reference.set({ ...BASKET_PRODUCT.data, discount: 0.9 }));
   });
 
   afterAll(async function () {

@@ -37,23 +37,22 @@ service cloud.firestore {
     function isValidBasketProduct(data){
       return isValidTimestamp(data.timestamp) 
         && (data.count > 0 && data.count < 100)
-        && (data.discount == 1 || data.discount == resource.data.discount)
         && isValidPrice(data)
         && isValidBasketProductKeys(data.keys())
-        && isValidOffer(data);
+        && (!data.get('offerID', false) || isOfferExists(data.productID, data.offerID));
     }
 
     function isValidBasketProductKeys(keys){
-      return keys.hasOnly(['timestamp', 'productID', 'price', 'count', 'discount']) 
-        || keys.hasOnly(['timestamp', 'productID', 'price', 'count', 'discount', 'offerID']);
+      return keys.hasOnly(['timestamp', 'productID', 'price', 'count']) 
+        || keys.hasOnly(['timestamp', 'productID', 'price', 'count', 'offerID']);
     }
 
     function isValidPrice(data){
       return get(/databases/$(database)/documents/products/$(data.productID)).data.price == data.price;
     }
 
-    function isValidOffer(data){
-      return !data.get('offerID', false) || exists(/databases/$(database)/documents/products/$(data.productID)/offers/$(data.offerID));
+    function isOfferExists(productID, offerID){
+      return exists(/databases/$(database)/documents/products/$(productID)/offers/$(offerID));
     }
   }
 
