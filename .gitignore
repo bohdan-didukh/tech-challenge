@@ -4,3 +4,4 @@
 node_modules/
 functions/firebase-debug.log
 hosting*
+functions/src/__tests__/serviceAccountKey.json

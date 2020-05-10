@@ -10,7 +10,6 @@ export type OfferType = keyof typeof OfferTypes;
 export interface OfferProduct {
   count: number;
   image: string;
-  productID: string;
 }
 export interface OfferData {
   type: OfferType;
