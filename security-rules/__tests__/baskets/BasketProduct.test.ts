@@ -19,6 +19,7 @@ export const BASKET_PRODUCT: {
     productID: PRODUCT.id,
     count: 1,
     price: PRODUCT.data.price,
+    discount: 1, // 1 means no discount price * discount === price
   },
 };
 
@@ -96,6 +97,14 @@ describe(`test ${CollectionBaskets}/{userID}/${CollectionProducts} collection`, 
     await assertFails(
       reference.set({ ...BASKET_PRODUCT.data, offerID: "invalid-offer-id" })
     );
+  });
+
+  /**
+   * discount value will be updated with cloud functions, so we just need to check that user is able to set 1
+   */
+  test("it should fail when the discount value is invalid", async function () {
+    await assertFails(reference.set({ ...BASKET_PRODUCT.data, discount: 2 }));
+    await assertFails(reference.set({ ...BASKET_PRODUCT.data, discount: 0.9 }));
   });
 
   afterAll(async function () {

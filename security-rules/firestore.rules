@@ -15,7 +15,6 @@ service cloud.firestore {
 
     match /baskets/{userID}{
       allow get: if isCurrentUser(userID);
-      allow write: if isCurrentUser(userID) && isValidTimestamp(request.resource.data.updated);
 
       match /products/{productID}{
         allow read: if isCurrentUser(userID);
@@ -38,14 +37,15 @@ service cloud.firestore {
     function isValidBasketProduct(data){
       return isValidTimestamp(data.timestamp) 
         && (data.count > 0 && data.count < 100)
+        && (data.discount == 1 || data.discount == resource.data.discount)
         && isValidPrice(data)
         && isValidBasketProductKeys(data.keys())
         && isValidOffer(data);
     }
 
     function isValidBasketProductKeys(keys){
-      return keys.hasOnly(['timestamp', 'productID', 'price', 'count']) 
-        || keys.hasOnly(['timestamp', 'productID', 'price', 'count', 'offerID']);
+      return keys.hasOnly(['timestamp', 'productID', 'price', 'count', 'discount']) 
+        || keys.hasOnly(['timestamp', 'productID', 'price', 'count', 'discount', 'offerID']);
     }
 
     function isValidPrice(data){
