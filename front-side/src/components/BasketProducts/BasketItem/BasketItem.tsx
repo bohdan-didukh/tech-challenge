@@ -61,7 +61,7 @@ export const BasketItem: React.FC<IBasketItem> = ({
 
   const count = basketProduct.get("count");
   const handleRemove = () => {
-    return removeProductFromBasket(product, count, offer);
+    return removeProductFromBasket(product);
   };
 
   return (
