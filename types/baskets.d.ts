@@ -4,8 +4,8 @@ export interface BasketProduct {
   timestamp: Timestamp | FieldValue;
   productID: string;
   count: number | FieldValue;
-  offer?: string; // offerID value
-  applied?: boolean;
+  price: number;
+  offerID?: string; // offerID value
 }
 
 export interface BasketData {

@@ -14,29 +14,47 @@ service cloud.firestore {
     }
 
     match /baskets/{userID}{
-      allow get: if request.auth.uid == userID;
-      allow write: if request.auth.uid == userID && isValidTimestamp(request.resource.data.updated);
+      allow get: if isCurrentUser(userID);
+      allow write: if isCurrentUser(userID) && isValidTimestamp(request.resource.data.updated);
 
       match /products/{productID}{
-        allow read: if request.auth.uid == userID;
-        allow create, update: if request.auth.uid == userID 
+        allow read: if isCurrentUser(userID);
+        allow create, update: if isCurrentUser(userID)
         && request.resource.data.productID == productID
-        && isValidBasketItem(request.resource.data);
-        allow delete: if request.auth.uid == userID;
+        && isValidBasketProduct(request.resource.data);
+        allow delete: if isCurrentUser(userID);
       }
     }
 
     // helper functions
+    function isCurrentUser(userID){
+      return request.auth.uid == userID;
+    }
+
     function isValidTimestamp(timestampValue){
       return request.time == timestampValue;
     }
 
-    function isValidBasketItem(data){
-      return isValidTimestamp(data.timestamp) && isProductExists(data.productID) && data.count > 0;
+    function isValidBasketProduct(data){
+      return isValidTimestamp(data.timestamp) 
+        && (data.count > 0 && data.count < 100)
+        && isValidPrice(data)
+        && isValidBasketProductKeys(data.keys())
+        && isValidOffer(data);
     }
 
-    function isProductExists(productID){
-      return exists(/databases/$(database)/documents/products/$(productID));
+    function isValidBasketProductKeys(keys){
+      return keys.hasOnly(['timestamp', 'productID', 'price', 'count']) 
+        || keys.hasOnly(['timestamp', 'productID', 'price', 'count', 'offerID']);
+    }
+
+    function isValidPrice(data){
+      return get(/databases/$(database)/documents/products/$(data.productID)).data.price == data.price;
+    }
+
+    function isValidOffer(data){
+      return !data.get('offerID', false) || exists(/databases/$(database)/documents/products/$(data.productID)/offers/$(data.offerID));
     }
   }
+
 }

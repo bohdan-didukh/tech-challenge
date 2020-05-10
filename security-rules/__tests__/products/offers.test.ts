@@ -26,6 +26,17 @@ export const OFFER: {
 const CollectionProducts: CollectionName = Collections.products;
 const CollectionOffers: CollectionName = Collections.offers;
 
+export function createOffer() {
+  const admin = getAdmin();
+  return admin
+    .firestore()
+    .collection(CollectionProducts)
+    .doc(PRODUCT.id)
+    .collection(CollectionOffers)
+    .doc(OFFER.id)
+    .set(OFFER.data);
+}
+
 describe(`test ${CollectionProducts}/${CollectionOffers} collection`, function () {
   beforeAll(async function () {
     await loadRules();
@@ -55,6 +66,10 @@ describe(`test ${CollectionProducts}/${CollectionOffers} collection`, function (
 
     await assertSucceeds(offersCollection.get());
     await assertSucceeds(offersCollection.doc(OFFER.id).get());
+  });
+
+  test("createOffer function", async function () {
+    await assertSucceeds(createOffer());
   });
 
   afterAll(async function () {
