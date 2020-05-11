@@ -1,4 +1,5 @@
-import * as myFunctions from "../../index";
+import { calcTotal } from "../../";
+
 import {
   INITIAL_USER,
   OFFER_KEYS,
@@ -7,14 +8,13 @@ import {
 } from "../addTestData.test";
 import { getAdmin } from "../../initializeAdmin";
 import { BasketProduct, Collections } from "../../../../types";
-import { calcTotal } from "../../index";
 
 const admin = getAdmin();
 
 describe("calcTotal: empty", function () {
   test("no user", async function () {
     try {
-      const data = await myFunctions.calcTotal((null as unknown) as string);
+      const data = await calcTotal((null as unknown) as string);
       expect(data).toBeUndefined();
     } catch (err) {
       expect(err.code).toBe("invalid-argument");
@@ -22,7 +22,7 @@ describe("calcTotal: empty", function () {
   });
   test("test empty basket", async function () {
     try {
-      const data = await myFunctions.calcTotal(INITIAL_USER.uid);
+      const data = await calcTotal(INITIAL_USER.uid);
       expect(data).toEqual({ total: 0, subtotal: 0 });
     } catch (e) {
       expect(e).toBeUndefined();
@@ -126,7 +126,7 @@ describe("calcTotal: discount type offer", function () {
       expect(subtotal).toBe(
         data.reduce((summary, { price, count }) => summary + price * count, 0)
       );
-      expect(total).toBe(subtotal * TEST_OFFERS[offerID].value);
+      expect(total).toBe(subtotal * (1 - TEST_OFFERS[offerID].value));
     } catch (err) {
       expect(err).toBeUndefined();
     }
