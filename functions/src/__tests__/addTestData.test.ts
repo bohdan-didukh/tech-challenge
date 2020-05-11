@@ -41,12 +41,14 @@ export const TEST_PRODUCTS: { [key: string]: ProductData } = {
 export const TEST_OFFERS: { [key: string]: OfferData } = {
   apples_offer: {
     type: "discount",
+    name: "Apples 10% off",
     value: 0.1,
     start: admin.firestore.Timestamp.fromMillis(Date.now() - WEEK),
     end: admin.firestore.Timestamp.fromMillis(Date.now() + WEEK),
   },
   bread_offer: {
     type: "group",
+    name: "Bread 50% off",
     value: 0.5,
     start: admin.firestore.Timestamp.fromMillis(Date.now() - WEEK),
     end: admin.firestore.Timestamp.fromMillis(Date.now() + WEEK),

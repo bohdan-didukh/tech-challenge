@@ -12,6 +12,7 @@ export interface OfferProduct {
   image: string;
 }
 export interface OfferData {
+  name: string;
   type: OfferType;
   value: number; // value in % from 0 to 1
   products?: { [key: string]: OfferProduct };

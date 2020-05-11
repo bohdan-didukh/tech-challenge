@@ -15,8 +15,8 @@ describe("calcTotal: empty", function () {
   });
   test("test empty basket", async function () {
     try {
-      const data = await wrappedGetTotal(null, { auth: INITIAL_USER });
-      expect(data).toEqual({ total: 0, subtotal: 0 });
+      const { total } = await wrappedGetTotal(null, { auth: INITIAL_USER });
+      expect(total).toBe(0);
     } catch (e) {
       expect(e).toBeUndefined();
     }

@@ -12,4 +12,8 @@ export interface BasketData {
   updated: Timestamp | FieldValue;
   total: number; // Field value is for increment function
   subtotal: number;
+  offers: Array<{
+    name: string;
+    discount: number;
+  }>;
 }

@@ -1,4 +1,4 @@
-import { BasketProduct, Collections } from "../../../types";
+import { BasketData, BasketProduct, Collections } from "../../../types";
 import { https } from "firebase-functions";
 import { mayApplyOffer } from "./mayApplyOffer";
 import { getOffer } from "../products";
@@ -32,7 +32,10 @@ export async function calcTotal(uid: string) {
   );
 
   return basketProducts.reduce(
-    ({ total, subtotal }, basketProduct) => {
+    (
+      { total, subtotal, offers: appliedOffers, ...props }: BasketData,
+      basketProduct
+    ) => {
       const { price, count, offerID } = basketProduct.data() as BasketProduct;
       const offer = offers.find(
         (offerDoc) => offerDoc.exists && offerDoc.id === offerID
@@ -44,14 +47,25 @@ export async function calcTotal(uid: string) {
         ? Math.min(count, mayApplyTimes) * price * offer.get("value")
         : 0;
 
+      if (offer) {
+        appliedOffers.push({
+          name: offer.get("name"),
+          discount: discount,
+        });
+      }
+
       return {
         subtotal: subtotal + price * count,
         total: total + price * count - discount,
+        offers: appliedOffers,
+        ...props,
       };
     },
     {
       subtotal: 0,
       total: 0,
+      offers: [],
+      updated: admin.firestore.Timestamp.now(),
     }
   );
 }

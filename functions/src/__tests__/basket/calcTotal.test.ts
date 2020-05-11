@@ -22,8 +22,9 @@ describe("calcTotal: empty", function () {
   });
   test("test empty basket", async function () {
     try {
-      const data = await calcTotal(INITIAL_USER.uid);
-      expect(data).toEqual({ total: 0, subtotal: 0 });
+      const { total, subtotal } = await calcTotal(INITIAL_USER.uid);
+      expect(total).toEqual(subtotal);
+      expect(total).toBe(0);
     } catch (e) {
       expect(e).toBeUndefined();
     }
