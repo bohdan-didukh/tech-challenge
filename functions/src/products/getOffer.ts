@@ -1,5 +1,7 @@
-import * as admin from "firebase-admin";
 import { Collections } from "../../../types";
+import { getAdmin } from "../initializeAdmin";
+
+const admin = getAdmin();
 
 export function getOffer(productID: string, offerID: string) {
   return admin

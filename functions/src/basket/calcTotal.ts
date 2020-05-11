@@ -1,11 +1,10 @@
 import { BasketProduct, Collections } from "../../../types";
-import * as admin from "firebase-admin";
 import { https } from "firebase-functions";
-import { getOffer } from "../";
 import { mayApplyOffer } from "./mayApplyOffer";
+import { getOffer } from "../products";
+import { getAdmin } from "../initializeAdmin";
 
-admin.initializeApp();
-
+const admin = getAdmin();
 /**
  * calculate total and subtotal values for the selected user.
  * @param uid
@@ -42,7 +41,7 @@ export async function calcTotal(uid: string) {
       const mayApplyTimes = mayApplyOffer(basketProducts, offer);
 
       const discount = offer
-        ? Math.min(count, mayApplyTimes) * price * (1 - offer.get("value"))
+        ? Math.min(count, mayApplyTimes) * price * offer.get("value")
         : 0;
 
       return {

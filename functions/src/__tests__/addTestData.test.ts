@@ -1,10 +1,10 @@
 import { OfferData, ProductData } from "../../../types/products";
 import { Collections } from "../../../types";
-import { getTestAdmin } from "./config";
+import { getAdmin } from "../initializeAdmin";
+
+const admin = getAdmin();
 
 export const INITIAL_USER = { uid: "bohdan" };
-
-const testAdmin = getTestAdmin();
 
 const WEEK = 1000 * 60 * 60 * 24 * 7; // one week
 export const TEST_PRODUCTS: { [key: string]: ProductData } = {
@@ -42,14 +42,14 @@ export const TEST_OFFERS: { [key: string]: OfferData } = {
   apples_offer: {
     type: "discount",
     value: 0.1,
-    start: testAdmin.firestore.Timestamp.fromMillis(Date.now() - WEEK),
-    end: testAdmin.firestore.Timestamp.fromMillis(Date.now() + WEEK),
+    start: admin.firestore.Timestamp.fromMillis(Date.now() - WEEK),
+    end: admin.firestore.Timestamp.fromMillis(Date.now() + WEEK),
   },
   bread_offer: {
     type: "group",
     value: 0.5,
-    start: testAdmin.firestore.Timestamp.fromMillis(Date.now() - WEEK),
-    end: testAdmin.firestore.Timestamp.fromMillis(Date.now() + WEEK),
+    start: admin.firestore.Timestamp.fromMillis(Date.now() - WEEK),
+    end: admin.firestore.Timestamp.fromMillis(Date.now() + WEEK),
     products: {
       soup: {
         count: 2,
@@ -77,18 +77,18 @@ export const OFFER_KEYS = [
  */
 
 describe("set test products", function () {
-  const productsRef = testAdmin.firestore().collection(Collections.products);
+  const productsRef = admin.firestore().collection(Collections.products);
 
   test("set products", async function () {
-    const batch = Object.entries(TEST_PRODUCTS).reduce(
+    const writeBatch = Object.entries(TEST_PRODUCTS).reduce(
       (batch, [productID, productData]) => {
         return batch.set(productsRef.doc(productID), productData);
       },
-      testAdmin.firestore().batch()
+      admin.firestore().batch()
     );
 
     try {
-      await batch.commit();
+      await writeBatch.commit();
     } catch (err) {
       expect(err).toBeUndefined();
     }
@@ -106,7 +106,7 @@ describe("set test products", function () {
   });
 
   test("set offers", async function () {
-    const batch = testAdmin.firestore().batch();
+    const batch = admin.firestore().batch();
     OFFER_KEYS.forEach(({ productID, offerID }) => {
       const reference = productsRef
         .doc(productID)

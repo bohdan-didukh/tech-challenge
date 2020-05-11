@@ -1,5 +1,4 @@
 import * as TestFunctions from "firebase-functions-test";
-import * as admin from "firebase-admin";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCB4okRAmpAWX65zF9Rt7yPNI3-MBVXkgI",
@@ -15,13 +14,6 @@ export const testFunctions = TestFunctions(
   firebaseConfig,
   "src/__tests__/serviceAccountKey.json"
 );
-
-admin.initializeApp({
-  credential: admin.credential.cert("src/__tests__/serviceAccountKey.json"),
-  databaseURL: firebaseConfig.databaseURL,
-});
-
-export const getTestAdmin = () => admin;
 
 test("at least one test", () => {
   expect(testFunctions).toBeDefined();

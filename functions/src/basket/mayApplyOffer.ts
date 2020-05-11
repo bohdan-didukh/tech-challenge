@@ -22,17 +22,19 @@ export function mayApplyOffer(
   }
 
   if (type === OfferTypes.group && products) {
-    const result = Object.entries(products).reduce(
+    const timesByProduct = Object.entries(products).reduce(
       (result: number[], [productID, { count }]) => [
         ...result,
-        (basketProducts.find((doc) => doc.id === productID)?.get("count") ||
-          0) / count,
+        Math.floor(
+          (basketProducts.find((doc) => doc.id === productID)?.get("count") ||
+            0) / count
+        ),
       ],
       []
     );
 
     // return how many times we may apply the offer checking by selected item
-    return Math.min(...result);
+    return Math.min(...timesByProduct);
   }
 
   return 0;
