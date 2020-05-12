@@ -24,4 +24,8 @@
   .products {
     margin: 0 auto;
   }
+
+  .products.hidden {
+    transform: translateX(-100%);
+  }
 }

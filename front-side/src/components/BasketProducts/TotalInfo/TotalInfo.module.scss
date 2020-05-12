@@ -1,0 +1,19 @@
+.totalInfo {
+  transition: all var(--speed);
+  padding: 20px 30px 20px 20px;
+
+  &.hidden {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+}
+
+.item {
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.value {
+  display: inline-block;
+}
