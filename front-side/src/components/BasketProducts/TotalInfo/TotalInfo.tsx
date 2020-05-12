@@ -11,10 +11,14 @@ export const TotalInfo: React.FC<TotalInfoProps> = ({ data, hidden }) => (
   <div className={`${styles.totalInfo} ${hidden ? styles.hidden : ""}`}>
     {data && (
       <>
-        <div className={styles.item}>
-          Subtotal:
-          <strong className={styles.value}>${toDollars(data.subtotal)}</strong>
-        </div>
+        {data.subtotal !== data.total && (
+          <div className={styles.item}>
+            Subtotal:
+            <strong className={styles.value}>
+              ${toDollars(data.subtotal)}
+            </strong>
+          </div>
+        )}
         {data.offers.map(({ name, discount }) => (
           <div className={styles.item}>
             {name}:
