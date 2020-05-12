@@ -85,7 +85,7 @@ describe("mayApplyOffer: group type offer", function () {
         offerID,
       },
       {
-        productID: "soup",
+        productID: "cCc0EJKiWe1mcvfkA2aX",
         count: 2,
         price: 2, // any value for test
       },

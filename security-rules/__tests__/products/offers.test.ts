@@ -16,7 +16,8 @@ export const OFFER: {
 } = {
   id: "offer-id",
   data: {
-    value: 1,
+    name: "20% off",
+    value: 0.8,
     type: OfferTypes.discount,
     start: firestore.Timestamp.fromMillis(Date.now() - DAY),
     end: firestore.Timestamp.fromMillis(Date.now() + DAY),

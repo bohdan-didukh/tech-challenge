@@ -8,25 +8,25 @@ export const INITIAL_USER = { uid: "bohdan" };
 
 const WEEK = 1000 * 60 * 60 * 24 * 7; // one week
 export const TEST_PRODUCTS: { [key: string]: ProductData } = {
-  milk: {
+  VSkhIansD7ryrLvWr6t: {
     image: "https://basket-challenge.web.app/static/milk.png",
     name: "Milk",
     price: 130,
     type: "bottle",
   },
-  apples: {
+  NVqYYpSJV6d7InXzDzUy: {
     image: "https://basket-challenge.web.app/static/apple.jpg",
     name: "Apples",
     price: 100,
     type: "bag",
   },
-  bread: {
+  bBhKMQns4FVDClfWTuk: {
     image: "https://basket-challenge.web.app/static/bread.jpg",
     name: "Bread",
     price: 80,
     type: "loaf",
   },
-  soup: {
+  cCc0EJKiWe1mcvfkA2aX: {
     image: "https://basket-challenge.web.app/static/soup.png",
     name: "Soup",
     price: 65,
@@ -49,7 +49,7 @@ export const TEST_OFFERS: { [key: string]: OfferData } = {
     start: admin.firestore.Timestamp.fromMillis(Date.now() - WEEK),
     end: admin.firestore.Timestamp.fromMillis(Date.now() + WEEK),
     products: {
-      soup: {
+      cCc0EJKiWe1mcvfkA2aX: {
         count: 2,
         image: "https://basket-challenge.web.app/static/soup.png",
       },

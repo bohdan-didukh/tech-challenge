@@ -162,8 +162,8 @@ describe("calcTotal: group type offer", function () {
   };
 
   const soup: BasketProduct = {
-    productID: "soup",
-    price: TEST_PRODUCTS.soup.price,
+    productID: "cCc0EJKiWe1mcvfkA2aX",
+    price: TEST_PRODUCTS.cCc0EJKiWe1mcvfkA2aX.price,
     count: 2,
   };
 
