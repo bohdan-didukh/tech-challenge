@@ -18,7 +18,7 @@ But I decided to make it as simple as possible.
 
 ## security-rules
 - Security rules described in the [firestore.rules](./security-rules/firestore.rules) file. 
-- All tests are in the [security-rules/\_\_tests\_\_](./security-rules/__tests__) folder.
+- All tests are in the [security-rules/\_\_tests\_\_](./security-rules/__tests__) folder. We need to run emulator(`yarn rules:run-emulator`) first to run tests.
 - product __price__ in the store in cents. It is easier to calculate integer values instead of floats.
 
 In most cases, there is only `read` permission.
