@@ -36,3 +36,26 @@ In the case when we have 4 soups in the basket, discount will be __$0.8__.
 - filenames are also according to the firestore structure.
 - it is useful to have types written once and be able to use them anywhere(on the client and server sides)
 - might be it is not perfect, because of firestore is not very well with TypeScript. But it is ok. IMHO 😄
+
+## firestore structure
+there are 2 main collections `baskets` and `products`. 
+
+### __products__ collection:
+Every product have `image`, `name`, `price` and `type` fields. And may have `offers` sub-collection.
+
+__main collections and products:__
+![main collections and products](./security-rules/static/main%20collections%20and%20products.png)
+
+There are 2 types of offers: `discount`(for apples) and `group`(for bread):
+
+- __discount type offer:__
+![product offer](./security-rules/static/product%20offers.png)
+
+- __group type offer:__
+![bread offer](./security-rules/static/bread%20offer.png)
+
+### __baskets__ collections
+Every basket product have `count`, `price`, `productID`, `timestamp` fields and may have `offerID` field.
+
+__basket products:__
+![basket products](./security-rules/static/basket%20products.png)
