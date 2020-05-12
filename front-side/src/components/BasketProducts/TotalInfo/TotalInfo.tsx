@@ -11,7 +11,7 @@ export const TotalInfo: React.FC<TotalInfoProps> = ({ data, hidden }) => (
   <div className={`${styles.totalInfo} ${hidden ? styles.hidden : ""}`}>
     {data && (
       <>
-        {data.subtotal !== data.total && (
+        {data.subtotal !== data.total && !data.offers.length && (
           <div className={styles.item}>
             Subtotal:
             <strong className={styles.value}>

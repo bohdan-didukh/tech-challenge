@@ -10,6 +10,7 @@
     "rules:test": "cd security-rules && yarn test",
     "rules:deploy": "cd security-rules && yarn deploy",
     "front-side:run": "cd front-side && yarn start",
+    "front-side:build": "cd front-side && yarn build",
     "front-side:deploy": "firebase deploy --only hosting"
   },
   "devDependencies": {

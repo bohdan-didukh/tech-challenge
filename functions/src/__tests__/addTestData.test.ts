@@ -9,29 +9,25 @@ export const INITIAL_USER = { uid: "bohdan" };
 const WEEK = 1000 * 60 * 60 * 24 * 7; // one week
 export const TEST_PRODUCTS: { [key: string]: ProductData } = {
   milk: {
-    image:
-      "https://cdn.pixabay.com/photo/2017/01/27/11/54/milk-bottle-2012800_960_720.png",
+    image: "https://basket-challenge.web.app/static/milk.png",
     name: "Milk",
     price: 130,
     type: "bottle",
   },
   apples: {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7UyBwdED752X-uNT2zO0mBkDfDj3Psotu8y77B4muSVFT-Icb&usqp=CAU",
+    image: "https://basket-challenge.web.app/static/apple.jpg",
     name: "Apples",
     price: 100,
     type: "bag",
   },
   bread: {
-    image:
-      "https://c0.wallpaperflare.com/preview/296/136/955/bread-loaf-white-isolated.jpg",
+    image: "https://basket-challenge.web.app/static/bread.jpg",
     name: "Bread",
     price: 80,
     type: "loaf",
   },
   soup: {
-    image:
-      "https://cdn.pixabay.com/photo/2017/06/14/16/03/noodle-2402571_960_720.png",
+    image: "https://basket-challenge.web.app/static/soup.png",
     name: "Soup",
     price: 65,
     type: "tin",
@@ -55,8 +51,7 @@ export const TEST_OFFERS: { [key: string]: OfferData } = {
     products: {
       soup: {
         count: 2,
-        image:
-          "https://cdn.pixabay.com/photo/2017/06/14/16/03/noodle-2402571_960_720.png",
+        image: "https://basket-challenge.web.app/static/soup.png",
       },
     },
   },
