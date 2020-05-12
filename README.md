@@ -38,7 +38,7 @@ In the case when we have 4 soups in the basket, discount will be __$0.8__.
 - it is useful to have types written once and be able to use them anywhere(on the client and server sides)
 - might be it is not perfect, because of firestore is not very well with TypeScript. But it is ok. IMHO 😄
 
-## firestore structure
+## Firestore structure
 there are 2 main collections `baskets` and `products`. 
 
 ### __products__ collection:
