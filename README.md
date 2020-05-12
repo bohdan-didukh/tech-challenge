@@ -31,6 +31,7 @@ And only for the `/baskets/{userID}/products/{productID}` there is permission to
 For exampe, when there are 2 soups and 2 breads. Discount for the bread is only __$0.4__(bread price is __$0.8__). 
 In the case when we have 4 soups in the basket, discount will be __$0.8__.
 - all tests are in the [functions/src/\_\_tests\_\_](./functions/src/__tests__) folder.
+- there is should be also a file [serviceAcconutKey.json](./functions/src/__tests__/serviceAcconutKey.json). But it is not secure to store it in the public repository. 
 
 ## types (TypeScript)
 - filenames are also according to the firestore structure.
