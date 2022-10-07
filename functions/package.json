@@ -8,16 +8,19 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "test": "jest -i"
+    "test": "jest -i",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "engines": {
     "node": "10"
   },
   "main": "lib/index.js",
   "dependencies": {
-    "firebase-admin": "^8.10.0",
+    "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.6.1",
-    "firebase-functions-test": "^0.2.0"
+    "firebase-functions-test": "^0.2.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@types/jest": "^24.0.0",
@@ -26,5 +29,6 @@
     "typescript": "^3.8.0",
     "ts-jest": "^24.1.0"
   },
-  "private": true
+  "private": true,
+  "snyk": true
 }
