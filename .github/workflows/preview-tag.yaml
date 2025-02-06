@@ -15,6 +15,10 @@ jobs:
 
         - name: Log pull request number and JSON info
           run: |
-            echo "Pull Request Number: ${{ github.event.review.state}}"
-            echo "Mergeable: ${{ toJson(github.event.pull_request.mergeable) }}"
-            echo "Mergeable: ${{ toJson(github.event.pull_request) }}"
+             echo "Reviewers: ${{ toJson(github.event.pull_request.requested_reviewers) }}"
+             
+        - name: Add 'preview' tag to pull request
+          if: ${{ github.event.pull_request.requested_reviewers == '' }}
+          run: gh pr edit ${{ github.event.pull_request.number }} --add-label 'preview'
+          env:
+            GITHUB_TOKEN: ${{ secrets.MY_SECRET_TOKEN }}
