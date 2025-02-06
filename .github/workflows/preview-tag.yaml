@@ -5,8 +5,8 @@ on:
       types: [submitted]
   
 jobs:
-    approved:
-      if: github.event.review.state == 'approved' 
+    add_preview_tag:
+      if: ${{ github.event.review.state == 'approved'  &&  (github.event.pull_request.requested_reviewers == null || github.event.pull_request.requested_reviewers.length == 0) }} 
       runs-on: ubuntu-latest
       steps:
         - run: echo "This PR was approved"
@@ -14,7 +14,6 @@ jobs:
           uses: actions/checkout@v2
              
         - name: Add 'preview' tag to pull request
-          if: ${{ github.event.pull_request.requested_reviewers == null || github.event.pull_request.requested_reviewers.length == 0 }}
           run: gh pr edit ${{ github.event.pull_request.number }} --add-label 'preview'
           env:
             GITHUB_TOKEN: ${{ secrets.MY_SECRET_TOKEN }}
