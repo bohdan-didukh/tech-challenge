@@ -1,0 +1,20 @@
+name: Add `preview` tag
+
+on:
+    pull_request_review_comment:
+      types: [created, deleted, edited]
+  
+jobs:
+    approved:
+      if: github.event.review.state == 'approved'
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "This PR was approved"
+        - name: Checkout code
+          uses: actions/checkout@v2
+
+        - name: Log pull request number and JSON info
+          run: |
+            echo "Pull Request Number: ${{ github.event.pull_request.number }}"
+            echo "Reviewers: ${{ toJson(github.event.pull_request.requested_reviewers) }}"
+            echo "Mergeable: ${{ github.event.pull_request.mergeable }}"
