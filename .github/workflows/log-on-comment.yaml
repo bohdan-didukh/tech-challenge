@@ -1,12 +1,11 @@
-name: log data on comment
+name: Add `preview` tag
 
 on:
-    pull_request_review_comment:
-      types: [created, deleted, edited]
+    pull_request_review:
+      types: [submitted]
   
 jobs:
     approved:
-      if: github.event.review.state == 'approved'
       runs-on: ubuntu-latest
       steps:
         - run: echo "This PR was approved"
@@ -17,4 +16,4 @@ jobs:
           run: |
             echo "Pull Request Number: ${{ github.event.pull_request.number }}"
             echo "Reviewers: ${{ toJson(github.event.pull_request.requested_reviewers) }}"
-            echo "Mergeable: ${{ github.event.pull_request.mergeable }}"
+            echo "Mergeable: ${{ toJson(github.event.pull_request.mergeable) }}"
