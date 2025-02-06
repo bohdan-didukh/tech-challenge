@@ -14,6 +14,6 @@ jobs:
 
         - name: Log pull request number and JSON info
           run: |
-               echo "Pull Request Number: ${{ github.event.review.state}}"
                echo "Reviewers: ${{ toJson(github.event.pull_request.requested_reviewers) }}"
-               echo "Mergeable: ${{ toJson(github.event.pull_request) }}"
+               echo "review: ${{ toJson(github.event.review) }}"
+               echo "Mergeable: ${{ toJson(github.event.pull_request.review) }}"
