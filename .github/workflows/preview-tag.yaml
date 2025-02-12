@@ -6,7 +6,7 @@ on:
 
 jobs:
   add_preview_tag:
-    if: ${{ github.event.review.state == 'approved'  &&  (github.event.pull_request.requested_reviewers == null || github.event.pull_request.requested_reviewers.length == 0) }}
+    if: ${{ github.event.review.state == 'approved' && github.event.pull_request.base.ref == 'master'  &&  (github.event.pull_request.requested_reviewers == null || github.event.pull_request.requested_reviewers.length == 0) }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "This PR was approved"
@@ -15,7 +15,7 @@ jobs:
 
       - name: Log pull request number and JSON info
         run: |
-           echo "Reviewers: ${{ toJson(github.event.pull_request) }}"
+           echo "base: ${{ toJson(github.event.pull_request.base) }}"
 
       - name: Add 'preview' tag to pull request
         run: gh pr edit ${{ github.event.pull_request.number }} --add-label 'preview'
