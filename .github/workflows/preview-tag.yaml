@@ -1,19 +1,23 @@
-name: Add `preview` tag
+name: Add `preview` label
 
 on:
-    pull_request_review:
-      types: [submitted]
-  
+  pull_request_review:
+    types: [submitted]
+
 jobs:
-    add_preview_tag:
-      if: ${{ github.event.review.state == 'approved'  &&  (github.event.pull_request.requested_reviewers == null || github.event.pull_request.requested_reviewers.length == 0) }} 
-      runs-on: ubuntu-latest
-      steps:
-        - run: echo "This PR was approved"
-        - name: Checkout code
-          uses: actions/checkout@v2
-             
-        - name: Add 'preview' tag to pull request
-          run: gh pr edit ${{ github.event.pull_request.number }} --add-label 'preview'
-          env:
-            GITHUB_TOKEN: ${{ secrets.MY_SECRET_TOKEN }}
+  add_preview_tag:
+    if: ${{ github.event.review.state == 'approved'  &&  (github.event.pull_request.requested_reviewers == null || github.event.pull_request.requested_reviewers.length == 0) }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This PR was approved"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log pull request number and JSON info
+        run: |
+           echo "Reviewers: ${{ toJson(github.event.pull_request) }}"
+
+      - name: Add 'preview' tag to pull request
+        run: gh pr edit ${{ github.event.pull_request.number }} --add-label 'preview'
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_SECRET_TOKEN }}
