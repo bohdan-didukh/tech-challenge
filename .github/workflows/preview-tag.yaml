@@ -9,14 +9,6 @@ jobs:
     if: ${{ github.event.review.state == 'approved' && github.event.pull_request.base.ref == 'master'  &&  (github.event.pull_request.requested_reviewers == null || github.event.pull_request.requested_reviewers.length == 0) }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "This PR was approved"
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Log pull request number and JSON info
-        run: |
-           echo "base: ${{ toJson(github.event.pull_request.base) }}"
-
       - name: Add 'preview' tag to pull request
         run: gh pr edit ${{ github.event.pull_request.number }} --add-label 'preview'
         env:
