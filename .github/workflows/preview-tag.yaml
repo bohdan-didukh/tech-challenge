@@ -9,6 +9,9 @@ jobs:
     if: ${{ github.event.review.state == 'approved' && github.event.pull_request.base.ref == 'master'  &&  (github.event.pull_request.requested_reviewers == null || github.event.pull_request.requested_reviewers.length == 0) }}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Log pull request data
         run: |
           echo "Mergeable: ${{ github.event.pull_request.mergeable_state }}"
