@@ -9,6 +9,12 @@ jobs:
     if: ${{ github.event.review.state == 'approved' && github.event.pull_request.base.ref == 'master'  &&  (github.event.pull_request.requested_reviewers == null || github.event.pull_request.requested_reviewers.length == 0) }}
     runs-on: ubuntu-latest
     steps:
+      - name: Log pull request data
+        run: |
+          echo "Mergeable: ${{ github.event.pull_request.mergeable_state }}"
+          echo "labels: ${{ github.event.pull_request.labels }}"
+          echo "locked: ${{ github.event.pull_request.locked }}"
+          
       - name: Add 'preview' tag to pull request
         run: gh pr edit ${{ github.event.pull_request.number }} --add-label 'preview'
         env:
